@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) Sallai András, 2015
+ * Licenc: GNU GPL
+ * Kérdőív készítő program lesz, egyszer
+ * A fejlesztés kezdete: 2015-06-15
+ * 
+ */
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
