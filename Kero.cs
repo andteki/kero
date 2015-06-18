@@ -24,21 +24,32 @@ class Program01 : Form {
 	
 	Label kerdesFelirat = new Label();
 	GroupBox valaszPanel = new GroupBox();
-	RadioButton radio0 = new RadioButton();
-	RadioButton radio1 = new RadioButton();
-	RadioButton radio2 = new RadioButton();
-	RadioButton radio3 = new RadioButton();
-	RadioButton radio4 = new RadioButton();
-	RadioButton radio5 = new RadioButton();
-	RadioButton radio6 = new RadioButton();
+	RadioButton[] radio = new RadioButton[7];
+	FlowLayoutPanel radioPanel = new FlowLayoutPanel();
+	
+
 	
 	
 	public Program01() {
-		kerdesFelirat.Text = "Jobban emlékszem a dolgokra, ha leírom őket";
-		kerdesFelirat.Location = new Point(40, 40);
+		for(int i=0;i<7;i++) {
+			radio[i] = new RadioButton();
+			radioPanel.Controls.Add(radio[i]);
+			radio[i].Text = i.ToString();
+		}
+		
+		radioPanel.Dock = DockStyle.Fill;
+		radioPanel.FlowDirection = FlowDirection.TopDown;
+		valaszPanel.Controls.Add(radioPanel);
+		valaszPanel.Size = new Size(700, 230);
+		valaszPanel.Location = new Point(40, 40);
+		valaszPanel.Text = "Lehetséges válaszok";
+		
+		kerdesFelirat.Text = "1.) Jobban emlékszem a dolgokra, ha leírom őket";
+		kerdesFelirat.Location = new Point(40, 10);
 		kerdesFelirat.Width = 700;
 		
 		kerdoPanel.Controls.Add(kerdesFelirat);
+		kerdoPanel.Controls.Add(valaszPanel);
 		
 		
 		kovGomb.Text = "Következő";
