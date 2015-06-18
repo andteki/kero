@@ -12,30 +12,77 @@ using System.Drawing;
 using System.Windows.Forms;
 
 class Program01 : Form {
-	Panel panel1 = new Panel();
-	Label label1 = new Label();
+	Label feladatFelirat = new Label();	
+	
+	FlowLayoutPanel kulsoPanel = new FlowLayoutPanel();
+	Panel feliratPanel = new Panel();
+	Panel kerdoPanel = new Panel();
+	FlowLayoutPanel gombPanel = new FlowLayoutPanel();
+	
+	Button kovGomb = new Button();
+	Button kilepGomb = new Button();
+	
+	Label kerdesFelirat = new Label();
+	GroupBox valaszPanel = new GroupBox();
+	RadioButton radio0 = new RadioButton();
 	RadioButton radio1 = new RadioButton();
+	RadioButton radio2 = new RadioButton();
+	RadioButton radio3 = new RadioButton();
+	RadioButton radio4 = new RadioButton();
+	RadioButton radio5 = new RadioButton();
+	RadioButton radio6 = new RadioButton();
+	
+	
 	public Program01() {
-		label1.Text = "1.) Jobban emlékszem a dolgokra" + 
-			"akkor, ha leírom őket.";
-		label1.Location = new Point(100, 50);
-		label1.Width = 600;
+		kerdesFelirat.Text = "Jobban emlékszem a dolgokra, ha leírom őket";
+		kerdesFelirat.Location = new Point(40, 40);
+		kerdesFelirat.Width = 700;
 		
-		radio1.Text = "Kicsit jellemző";		
-		radio1.Location = new Point(100, 100);
-		
-		panel1.Controls.Add(radio1);
-		panel1.Controls.Add(label1);
-		
-		//panel1.BackColor = Color.Blue;
-		panel1.Width = 600;
-		panel1.Height = 500;		
+		kerdoPanel.Controls.Add(kerdesFelirat);
 		
 		
-		this.Controls.Add(panel1);
+		kovGomb.Text = "Következő";
+		kilepGomb.Text = "Kilépés";
+		kovGomb.BackColor = Color.LightGray;
+		kilepGomb.BackColor = Color.LightGray;
 		
+		gombPanel.Controls.Add(kovGomb);
+		gombPanel.Controls.Add(kilepGomb);
+		
+		
+		kulsoPanel.FlowDirection = FlowDirection.TopDown;
+		kulsoPanel.WrapContents = false;
+		kulsoPanel.Controls.Add(feliratPanel);
+		kulsoPanel.Controls.Add(kerdoPanel);
+		kulsoPanel.Controls.Add(gombPanel);
+		kulsoPanel.Dock = DockStyle.Fill;
+		
+		feliratPanel.BorderStyle = BorderStyle.FixedSingle;
+		kerdoPanel.BorderStyle = BorderStyle.FixedSingle;
+		gombPanel.BorderStyle = BorderStyle.FixedSingle;
+		
+		
+		feladatFelirat.Text = "Mennyire jellemző önre az alábbi felvetés?";
+		feladatFelirat.Location = new Point(5, 5);
+		feladatFelirat.Width = 786;
+		
+		feliratPanel.Controls.Add(feladatFelirat);
+		feliratPanel.Width = 786;
+		feliratPanel.Height = 30;
+		feliratPanel.BackColor = Color.White;
+		
+		kerdoPanel.Width = 786;
+		kerdoPanel.Height = 300;
+		kerdoPanel.BackColor = Color.White;
+			
+		gombPanel.Width = 786;
+		gombPanel.Height = 30;
+		gombPanel.BackColor = Color.White;
+		
+		
+		this.Controls.Add(kulsoPanel);
 		this.Width = 800;
-		this.Height = 600;
+		this.Height = 420;
 		this.Show();
 	}	
 	public static void Main() {
