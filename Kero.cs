@@ -18,28 +18,62 @@ class Program01 : Form {
 	Panel feliratPanel = new Panel();
 	Panel kerdoPanel = new Panel();
 	FlowLayoutPanel gombPanel = new FlowLayoutPanel();
+	FlowLayoutPanel lehetosegPanel = new FlowLayoutPanel();
+	
 	
 	Button kovGomb = new Button();
 	Button kilepGomb = new Button();
 	
 	Label kerdesFelirat = new Label();
 	GroupBox valaszPanel = new GroupBox();
-	RadioButton radio0 = new RadioButton();
-	RadioButton radio1 = new RadioButton();
-	RadioButton radio2 = new RadioButton();
-	RadioButton radio3 = new RadioButton();
-	RadioButton radio4 = new RadioButton();
-	RadioButton radio5 = new RadioButton();
-	RadioButton radio6 = new RadioButton();
 	
+	RadioButton[] radio = new RadioButton[7];	
 	
+	string[] kerdesek = {
+		"Jobban emlékszem a dolgokra, ha leírom őket",
+		"Olvasás közben \"hallom\" a szavakat a fejemben, vagy önkéntelenül mormolok",
+		"Meg kell, hogy beszéljek dolgokat valakivel ahhoz, hogy jobban megértsem őket",
+		"Nem szeretem sem az írott sem a szóbeli utasításokat. Inkább egyszerűen csak hozzáfogok a feladathoz",
+		"Képes vagyok arra, hogy \"fejben lássak\" dolgokat, azaz hogy magam elé képzeljem."
+	};
+	
+	int status = 0;
+
 	public Program01() {
-		kerdesFelirat.Text = "Jobban emlékszem a dolgokra, ha leírom őket";
-		kerdesFelirat.Location = new Point(40, 40);
+		kovGomb.Click += new EventHandler(KovGombClick);
+		
+		lehetosegPanel.FlowDirection = FlowDirection.TopDown;
+		lehetosegPanel.WrapContents = false;
+		lehetosegPanel.Dock = DockStyle.Fill;
+		
+		valaszPanel.Controls.Add(lehetosegPanel);
+		valaszPanel.Height = 230;
+		
+		string[] felirat = {
+			"Egyáltalán nem jellemző", 
+			"Kicsit jellemző",			
+			"Kicsinél jobban jellemző",
+			"Közepesen jellemző",
+			"Nagyon jellemző",
+			"Nagyon, negyon jellemző",
+			"Teljesen jellemző"
+			};
+		
+		for(int i=0; i<7; i++) {
+			radio[i] = new RadioButton();
+			lehetosegPanel.Controls.Add(radio[i]);
+			radio[i].Text = felirat[i];
+			radio[i].Width = 200;
+		}		
+		
+		kerdesFelirat.Text = kerdesek[0];
+		kerdesFelirat.Location = new Point(40, 20);
 		kerdesFelirat.Width = 700;
 		
 		kerdoPanel.Controls.Add(kerdesFelirat);
+		kerdoPanel.Controls.Add(valaszPanel);
 		
+		valaszPanel.Location = new Point(100, 50);		
 		
 		kovGomb.Text = "Következő";
 		kilepGomb.Text = "Kilépés";
@@ -84,7 +118,16 @@ class Program01 : Form {
 		this.Width = 800;
 		this.Height = 420;
 		this.Show();
-	}	
+	}
+	private void KovGombClick(Object sender, EventArgs e) {
+		if(status<4) {
+			status++;
+		}else {
+			status = 0;
+		}
+		kerdesFelirat.Text = kerdesek[status];
+	}
+
 	public static void Main() {
 		Application.Run(new Program01());
 	}

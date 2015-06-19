@@ -10,3 +10,18 @@ Ez a program egy C# nyelven írt kérdőív
 kitöltő program. Jelenleg nincs kész.
 
 Na de majd ma!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
