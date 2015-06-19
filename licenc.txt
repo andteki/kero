@@ -1,0 +1,15 @@
+
+Ez a program Sallai András tulajdona.
+Felhasználható, terjeszhető az alábbi
+feltételek szerint.
+
+A programot bárki szabadon használhatja,
+pénzt is kérhet érte, a forráskódját
+is megkaphatja. Ha valaki megkapja a 
+futtatható verziót, kérheti a forráskódot is.
+Ha valaki továbbfejleszti, köteles ezzel a
+licenccel továbbterjeszteni.
+
+Ez a program abban a reményben készült, hogy 
+hasznos lesz, de minden garancia nélkül. 
+

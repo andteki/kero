@@ -1,0 +1,11 @@
+
+A program tulajdonosa: Sallai András
+E-mail: sallai2013a@puszta
+
+Verzió: 0.1
+
+Webhely: http://valaholazinterneten.hu/
+
+Ez a program egy C# nyelven írt kérdőív
+kitöltő program. Jelenleg nincs kész.
+
