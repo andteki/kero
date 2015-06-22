@@ -6,7 +6,6 @@
  * 
  */
 
-
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -28,7 +27,6 @@ class EredmenyPanel : Panel {
 		eredmenyFelirat.Text = felirat + pontszamStr;
 	}	
 }
-
 
 class KerdoPanel : Panel {
 	
@@ -96,8 +94,7 @@ class KerdoPanel : Panel {
 		if(this.status <= kerdesek.Length) {
 			Szamit();
 		}
-	}
-	
+	}	
 	public int lekerStatus() {
 		return this.status;
 	}
@@ -115,7 +112,6 @@ class KerdoPanel : Panel {
 		return this.pontszam;
 	}
 }
-
 
 class Program01 : Form {
 	Label feladatFelirat = new Label();	
@@ -137,6 +133,7 @@ class Program01 : Form {
 		kovGomb.Text = "Következő";
 		kilepGomb.Text = "Kilépés";
 		nevjegyGomb.Text = "Névjegy";
+		
 		kovGomb.BackColor = Color.LightGray;
 		kilepGomb.BackColor = Color.LightGray;
 		nevjegyGomb.BackColor = Color.LightGray;
@@ -145,25 +142,17 @@ class Program01 : Form {
 		gombPanel.Controls.Add(kilepGomb);
 		gombPanel.Controls.Add(nevjegyGomb);
 		
-		
 		kulsoPanel.FlowDirection = FlowDirection.TopDown;
 		kulsoPanel.WrapContents = false;
 		kulsoPanel.Controls.Add(feliratPanel);
-		
-		
 		kulsoPanel.Controls.Add(kerdoPanel);
 		kulsoPanel.Controls.Add(eredmenyPanel);
-		
-		
-		
-		
 		kulsoPanel.Controls.Add(gombPanel);
 		kulsoPanel.Dock = DockStyle.Fill;
 		
 		feliratPanel.BorderStyle = BorderStyle.FixedSingle;
 		kerdoPanel.BorderStyle = BorderStyle.FixedSingle;
 		gombPanel.BorderStyle = BorderStyle.FixedSingle;
-		
 		
 		feladatFelirat.Text = "Mennyire jellemző önre az alábbi felvetés?";
 		feladatFelirat.Location = new Point(5, 5);
